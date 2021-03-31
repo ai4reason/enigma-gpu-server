@@ -120,7 +120,7 @@ async def main(*args, **kwargs):
         await asyncio.gather(*workers, return_exceptions=True)
 
 network = Network()
-network.load("../models/premsel_enigma_01_2020_T30_loop02_2")
+network.load("../models/gnn/premsel_enigma_01_2020_T30_loop02_2")
 asyncio.run(main(client,
                  host=SERVER_IP,
                  port=SERVER_PORT,
