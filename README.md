@@ -33,7 +33,11 @@ where
 An example E's strategy with `EnigmaticTfs` is as follows:
 
 ```
-eprover -s --print-statistics --resources-info --definitional-cnf=24 --split-aggressive   --simul-paramod --forward-context-sr --destructive-er-aggressive --destructive-er --prefer-initial-clauses -tKBO6 -winvfreqrank -c1 -Ginvfreq -F1 --delete-bad-limit=150000000 -WSelectMaxLComplexAvoidPosPred --delayed-eval-cache=128 -H'(1*EnigmaTf(ConstPrio,127.0.0.1,8888,0,1024,0))' problem.p
+eprover -s --print-statistics --resources-info --definitional-cnf=24 --split-aggressive 
+  --simul-paramod --forward-context-sr --destructive-er-aggressive --destructive-er
+  --prefer-initial-clauses -tKBO6 -winvfreqrank -c1 -Ginvfreq -F1 --delete-bad-limit=150000000 
+  -WSelectMaxLComplexAvoidPosPred --delayed-eval-cache=128 
+  -H'(1*EnigmaTf(ConstPrio,127.0.0.1,8888,0,1024,0))' problem.p
 ```
 
 Note that the argument `--delayed-eval-cache=128` is used to select the query size.
