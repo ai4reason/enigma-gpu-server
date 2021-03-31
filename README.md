@@ -30,7 +30,7 @@ where
 * `weight_type` should be set to `2` (to use a sigmoid-like function to translate neural network's logits to the interval _(0,1)_)
 * `threshold` is a threshold to decide which clause weights should be consider positives/negatives (use 0.5 as a default).
 
-An example E's strategy with `EnigmaticTfs` is as follows:
+An example E strategy with `EnigmaticTfs` is as follows:
 
 ```
 eprover -s --print-statistics --resources-info --definitional-cnf=24 --split-aggressive 
@@ -55,6 +55,38 @@ The additional parameters are as follows:
 * `lgb_model_dir` is the directory with LGB model,
 * `lgb_weight_type` should be set to `1` (to use the threshold below) 
 * `lgb_threshold` is the threshold to decide which clauses to evaluate on the GPU server (a real number between _0_ and _1_).
+
+## Running E with parental guidance.
+
+Download and compile an E client from
+
+* https://github.com/zariuq/eprover/tree/parentalguidance_cade21
+
+Parental guidance is used via a commandline argument to E:
+
+```
+--filter-generated-clauses=parental_lgb_model_dir
+--filter-generated-threshold=parental_threshold
+```
+
+An LGB model for clause selection can be used via the clause weight function `EnigmaticLgb`:
+
+```
+EnigmaticLgb(prio_fun, selection_lgb_model_dir, weight_type, threshold)
+```
+
+where 
+
+* `parental_lgb_model_dir` is the directory with the LGB model for parental guidance,
+* `parental_threshold` is the threshold below which a pair of inference parents will be filtered (a real number between _0_ and _1_).
+* `selection_lgb_model_dir` is the directory with the LGB model for clause selection,
+* `weight_type` can be set to `1` to simply rate clauses as `positive` or `negative`.
+
+Repositories to help with training models can be found at:
+
+* https://github.com/zariuq/pyprove/tree/parentalguidance_cade21
+* https://github.com/zariuq/enigmatic/tree/parentalguidance_cade21
+
 
 ## Requirements
 
