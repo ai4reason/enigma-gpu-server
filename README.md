@@ -37,7 +37,7 @@ eprover -s --print-statistics --resources-info --definitional-cnf=24 --split-agg
   --simul-paramod --forward-context-sr --destructive-er-aggressive --destructive-er
   --prefer-initial-clauses -tKBO6 -winvfreqrank -c1 -Ginvfreq -F1 --delete-bad-limit=150000000 
   -WSelectMaxLComplexAvoidPosPred --delayed-eval-cache=128 
-  -H'(1*EnigmaTf(ConstPrio,127.0.0.1,8888,0,1024,0))' problem.p
+  -H'(1*EnigmaticTfs(ConstPrio,127.0.0.1,8888,1024,2,0.5))' problem.p
 ```
 
 Note that the argument `--delayed-eval-cache=128` is used to select the query size.
