@@ -60,7 +60,7 @@ The additional parameters are as follows:
 
 Download and compile an E client from
 
-* https://github.com/zariuq/eprover/tree/parentalguidance_cade21
+* https://github.com/zariuq/eprover/tree/parentalguidance_frozen
 
 Parental guidance is used via a commandline argument to E:
 
@@ -84,8 +84,8 @@ where
 
 Repositories to help with training models can be found at:
 
-* https://github.com/zariuq/pyprove/tree/parentalguidance_cade21
-* https://github.com/zariuq/enigmatic/tree/parentalguidance_cade21
+* https://github.com/zariuq/pyprove/tree/parentalguidance_frozen
+* https://github.com/zariuq/enigmatic/tree/parentalguidance_frozen
 
 
 ## Requirements
